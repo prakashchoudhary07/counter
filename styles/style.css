@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.counterPlugin {
+}
+
+.counter {
+  font-size: 10rem;
+  color: #212121;
+  background: #e0e0e0;
+  border: 2px solid black;
+  display: inline-flex;
+  padding: 5px;
+  margin: 20px 20px;
+}
