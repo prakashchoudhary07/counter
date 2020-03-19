@@ -24,4 +24,4 @@ const likes = document.getElementById('likes');
 counterManager(likes, 20, 99999999999);
 
 const subscribers = document.getElementById('subscribers');
-counterManager(subscribers, 0, 10, 10);
+counterManager(subscribers, 0, 1000000, 10);
