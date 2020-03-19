@@ -1,21 +1,27 @@
-const COUNTER_INITIAL_VALUE = 10;
-const MAX_COUNTER_LIMIT = 9009;
+function counterManager(
+  nodeReference,
+  initilaValue,
+  finalValue,
+  interval = 10
+) {
+  const PRIME = 97;
 
-const SPEED = 100;
+  let incrementStepSize = Math.floor(finalValue / PRIME);
 
-let interval = 100;
+  let counterValue = initilaValue;
 
-let incrementStepSize = Math.floor(MAX_COUNTER_LIMIT / SPEED) + 1;
+  let x = setInterval(function() {
+    counterValue += incrementStepSize;
+    if (counterValue > finalValue) {
+      counterValue = finalValue;
+      clearInterval(x);
+    }
+    nodeReference.innerText = counterValue;
+  }, interval);
+}
 
-let counterValue = COUNTER_INITIAL_VALUE;
+const likes = document.getElementById('likes');
+counterManager(likes, 20, 99999999999);
 
-let counter = document.getElementById('counter');
-
-let x = setInterval(function() {
-  counterValue += incrementStepSize;
-  if (counterValue > MAX_COUNTER_LIMIT) {
-    counterValue = MAX_COUNTER_LIMIT;
-    clearInterval(x);
-  }
-  counter.innerHTML = counterValue;
-}, interval);
+const subscribers = document.getElementById('subscribers');
+counterManager(subscribers, 20, 10000000000000000, 10);
