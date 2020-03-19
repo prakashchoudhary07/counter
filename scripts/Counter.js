@@ -6,7 +6,7 @@ function counterManager(
 ) {
   const PRIME = 97;
 
-  let incrementStepSize = Math.floor(finalValue / PRIME);
+  let incrementStepSize = Math.ceil(finalValue / PRIME);
 
   let counterValue = initilaValue;
 
@@ -24,4 +24,4 @@ const likes = document.getElementById('likes');
 counterManager(likes, 20, 99999999999);
 
 const subscribers = document.getElementById('subscribers');
-counterManager(subscribers, 20, 10000000000000000, 10);
+counterManager(subscribers, 0, 10, 10);
